@@ -52,7 +52,7 @@ onMounted(()=>getLikeList())
 <style scoped lang="scss">
 .home-overview {
   height: 132px;
-  background: url(@/assets/images/center-bg.png) no-repeat center / cover;
+  background: $gradientMain;
   display: flex;
 
   .user-meta {
@@ -88,7 +88,7 @@ onMounted(()=>getLikeList())
     justify-content: space-around;
 
     &:first-child {
-      border-right: 1px solid #f4f4f4;
+      border-right: 1px solid #2a2a45;
     }
 
     a {
@@ -110,18 +110,18 @@ onMounted(()=>getLikeList())
 .like-container {
   margin-top: 20px;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: $cardBg;
 }
 
 .home-panel {
-  background-color: #fff;
+  background-color: $cardBg;
   padding: 0 20px;
   margin-top: 20px;
   height: 400px;
 
   .header {
     height: 66px;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid #2a2a45;
     padding: 18px 0;
     display: flex;
     justify-content: space-between;
@@ -130,6 +130,7 @@ onMounted(()=>getLikeList())
     h4 {
       font-size: 22px;
       font-weight: 400;
+      color: $textPrimary;
     }
 
   }

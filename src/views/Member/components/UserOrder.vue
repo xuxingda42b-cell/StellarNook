@@ -148,6 +148,7 @@ const pageChange = (page)=>{
 <style scoped lang="scss">
 .order-container {
   padding: 10px 20px;
+  background-color: $cardBg;
 
   .pagination-container {
     display: flex;
@@ -164,16 +165,46 @@ const pageChange = (page)=>{
       align-items: center;
     }
   }
+
+  /* 覆盖 element-plus 的 el-tabs 亮色样式 */
+  :deep(.el-tabs__item) {
+    color: $textSecondary;
+    &.is-active, &:hover {
+      color: $textPrimary;
+    }
+  }
+  :deep(.el-tabs__nav-wrap::after) {
+    background-color: #2a2a45;
+  }
+
+  /* 覆盖 element-plus 的 el-pagination 亮色样式 */
+  :deep(.el-pagination.is-background .el-pager li) {
+    background-color: #1e1e3b;
+    color: $textSecondary;
+    &.is-active {
+      background-color: $xtxColor;
+      color: #fff;
+    }
+  }
+  :deep(.el-pagination.is-background .btn-prev),
+  :deep(.el-pagination.is-background .btn-next) {
+    background-color: #1e1e3b;
+    color: $textSecondary;
+  }
+  :deep(.el-empty__description p) {
+    color: $textSecondary;
+  }
 }
 
 .order-item {
   margin-bottom: 20px;
-  border: 1px solid #f5f5f5;
+  border: 1px solid #2a2a45;
 
   .head {
     height: 50px;
     line-height: 50px;
-    background: #f5f5f5;
+    background: #1e1e3b;
+    color: $textPrimary;
     padding: 0 20px;
     overflow: hidden;
 
@@ -199,7 +230,7 @@ const pageChange = (page)=>{
     .del {
       margin-right: 0;
       float: right;
-      color: #999;
+      color: $textSecondary;
     }
   }
 
@@ -208,9 +239,10 @@ const pageChange = (page)=>{
     align-items: stretch;
 
     .column {
-      border-left: 1px solid #f5f5f5;
+      border-left: 1px solid #2a2a45;
       text-align: center;
       padding: 20px;
+      color: $textPrimary;
 
       >p {
         padding-top: 10px;
@@ -227,7 +259,7 @@ const pageChange = (page)=>{
 
         ul {
           li {
-            border-bottom: 1px solid #f5f5f5;
+            border-bottom: 1px solid #2a2a45;
             padding: 10px;
             display: flex;
 
@@ -238,7 +270,8 @@ const pageChange = (page)=>{
             .image {
               width: 70px;
               height: 70px;
-              border: 1px solid #f5f5f5;
+              border: 1px solid #2a2a45;
+              border-radius: 4px;
             }
 
             .info {
@@ -251,10 +284,11 @@ const pageChange = (page)=>{
 
                 &.name {
                   height: 38px;
+                  color: $textPrimary;
                 }
 
                 &.attr {
-                  color: #999;
+                  color: $textSecondary;
                   font-size: 12px;
 
                   span {
